@@ -10,8 +10,13 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = Employee.create(employee_params)
-    redirect_to employee_path(@employee)
+    @employee = Employee.new(employee_params)
+    if @employee.valid?
+      @employee.save
+      redirect_to employee_path(@employee)
+    else
+      render :new
+    end
   end
 
   def show
@@ -21,8 +26,11 @@ class EmployeesController < ApplicationController
   end
 
   def update
-    @employee.update(employee_params)
-    redirect_to employee_path(@employee)
+    if @employee.update!(employee_params)
+      redirect_to employee_path(@employee)
+    else
+      render :edit
+    end
   end
 
   private
