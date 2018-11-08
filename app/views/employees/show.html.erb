@@ -1,0 +1,22 @@
+<Div>Dog</Div><br></br>
+
+<Div>Dog Name: <%= @employee.dog.name %></Div><br>
+
+<Div>Employee Name: <%= @employee.first_name %></Div><br>
+<Div>Employee Name: <%= @employee.last_name %></Div><br>
+
+<Div>Alias: <%= @employee.alias %></Div><br>
+
+<Div>Title: <%= @employee.title %></Div><br>
+
+<Div>Office: <%= @employee.office %></Div><br>
+
+<Div>Img: <%= @employee.img_url %></Div><br>
+
+
+
+<%= link_to @employee.dog.name, dog_path(@employee.dog) if @employee.dog %>
+
+<%= form_tag @employee, method: "Delete" do %>
+    <%= submit_tag "Delete" %>
+  <%end%>
