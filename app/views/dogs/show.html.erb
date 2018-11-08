@@ -6,6 +6,6 @@
 <h2>Associated Employees: </h2><br>
 <ul>
   <% @dog.employees.collect do |employee| %>
-  <li>   <%= link_to employee.name, employee_path(employee)%> </li>
+  <li>   <%= link_to employee.to_s, employee_path(employee)%> </li>
   <%end %>
 </ul>
