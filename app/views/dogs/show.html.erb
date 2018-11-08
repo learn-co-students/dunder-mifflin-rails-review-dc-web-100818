@@ -1,0 +1,12 @@
+<Div>Dog</Div><br></br>
+
+<Div>Dog Name: <%= @dog.name %></Div><br>
+
+<Div>Employee Name: <%= @dog.breed %></Div><br>
+<Div>Employee Name: <%= @dog.age %></Div><br>
+
+<%= link_to "Index", dogs_path %>
+
+<%= form_tag @dog, method: "Delete" do %>
+    <%= submit_tag "Delete" %>
+  <%end%>
