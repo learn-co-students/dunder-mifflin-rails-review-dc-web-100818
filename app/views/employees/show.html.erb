@@ -1,0 +1,20 @@
+<h2><%= @employee.full_name%></h2>
+<img src="<%=@employee.img_url%>"><br>
+<table>
+  <thead>
+    <tr>
+      <th>Alias</th>
+      <th>Title</th>
+      <th>Office</th>
+      <th>Dog</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @employee.alias %></td>
+      <td><%= @employee.title %></td>
+      <td><%= @employee.office %></td>
+      <td><%= link_to @employee.dog.name, @employee.dog %></td>
+    </tr>
+  </tbody>
+</table>
