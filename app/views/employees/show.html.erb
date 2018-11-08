@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= @employee.name %></title> <!-- .name is bad here because it's the view talking to the controller -->
+  </head>
+  <body>
+    <h1><%= @employee.name %></h1> <!-- .name is bad here because it's the view talking to the controller -->
+    <p><b>AKA:</b> <%= @employee.alias %></p>
+    <p><b>Title:</b> <%= @employee.title %></p>
+    <p><b>Office:</b> <%= @employee.office %></p>
+    <p><b>Dog:</b> <%= link_to @employee.dog.name, dog_path(@employee.dog.id) %></p>
+    <% if @employee.img_url %>
+      <p><%= image_tag @employee.img_url %></p>
+    <% end %>
+    
+    <p><%= link_to 'Edit this employee', edit_employee_path(@employee.id) %></p>
+
+    <p><%= link_to 'All Employees', employees_path %></p>
+  </body>
+</html>
