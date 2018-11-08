@@ -1,0 +1,12 @@
+<h1><%= @employee.name %></h1>
+<h4><%= @employee.alias %></h4>
+<h4><%= @employee.title %></h4>
+<h4><%= @employee.office %></h4>
+<h4><%= @employee.img_url %></h4>
+
+<h1>Dog Owner</h1>
+<h4><%= link_to @employee.dog.name, dog_path(@employee.dog)%></h4>
+
+<h5><%= link_to "Edit #{@employee.name}'s Information", edit_employee_path(@employee) %></h5>
+
+<h6><%= link_to "Back to Employee Index", employees_path %></h6>
