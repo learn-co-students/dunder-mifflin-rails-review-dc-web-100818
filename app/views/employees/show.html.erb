@@ -1,0 +1,11 @@
+<h1><%="#{@employee.first_name} #{@employee.last_name}"%></h1>
+<img src="<%=@employee.img_url%>" alt="<%= @employee.first_name + @employee.last_name%>"> <br>
+<h2>
+<label for="alias">Alias: </label><%= @employee.alias %> <br>
+<label for="title">Title: </label><%= @employee.title %> <br>
+<label for="office">Office: </label><%= @employee.office %> <br>
+<label for="Dog">Doggo: </label><%= link_to @employee.dog.name, dog_path(@employee.dog) %> <br>
+</h2>
+<%= link_to "Edit Employee", edit_employee_path(@employee) %>
+<br>
+<%= link_to "Employees", employees_path %>
