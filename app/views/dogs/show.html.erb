@@ -1,0 +1,11 @@
+<h1>Dog Details</h1>
+
+<h2>Name: <%= @dog.name %> </h2><br>
+<h2>Breed: <%= @dog.breed %> </h2><br>
+<h2>Age: <%= @dog.age %> </h2><br>
+<h2>Associated Employees: </h2><br>
+<ul>
+  <% @dog.employees.collect do |employee| %>
+  <li>   <%= link_to employee.to_s, employee_path(employee)%> </li>
+  <%end %>
+</ul>
